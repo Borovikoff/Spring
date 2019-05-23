@@ -1,0 +1,16 @@
+package com.Warehouse.repos;
+
+import com.Warehouse.domain.WarehouseOrderLine;
+import com.kursach.KursachWarehouse.domain.*;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+
+public interface WarehouseOrderLineRepository extends CrudRepository<WarehouseOrderLine,Integer> {
+
+    List<WarehouseOrderLine> findWarehouseOrderLineByWarehouseOrder_Id(Long tag);
+    WarehouseOrderLine findByWarehouseOrder_Id(Long tag);
+    List<WarehouseOrderLine> findByUser_Id(Long tag);
+    WarehouseOrderLine findById(Long tag);
+    Integer deleteById(Long tag);
+}
